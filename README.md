@@ -240,7 +240,7 @@ firesim/deploy/config_build_recipes.ini
 **`TARGET_CONFIG=DDR3FRFCFSLLC4MB_FireSimQuadRocketHypConfig`**\
 **`PLATFORM_CONFIG=F90MHz_BaseF1Config`**\
 **`instancetype=z1d.2xlarge`**\
-**`deploytriplet=None`**\
+**`deploytriplet=None`**
 
 `[builds]`\
 `# this section references builds defined in config_build_recipes.ini`\
@@ -259,11 +259,30 @@ firesim/deploy/config_build_recipes.ini
 **Note**: Depending on your AWS instance resources, the build can take around 5-6 hours (i.e., c4.4xlarge)
 
 
-# 3 - Running your Rocket-H simulation
+# 4 - Running your Rocket-H simulation
 
-For "Running FireSim Simulations" please refer to the FireSim documentation:
+### 4.1 Setting Up your workload
 
-https://docs.fires.im/en/latest/Running-Simulations-Tutorial
+In ~/firesim/deploy/workloads create a bao directory and a bao.json file with the following content:
+
+```
+{
+  "benchmark_name"            : "bao",
+  "common_bootbinary"         : "bao_rocket-firesim-xxx.elf",
+  "common_rootfs"             : "dummy.rootfs",
+  "common_simulation_outputs" : ["uartlog"]
+}
+```
+
+Upload the dummy.rootfs and the final bao binary built in step 1.5 (named **/path/to/bao-hypervisor/tools/firesim/images/bao-rocket-firesim_rocket-firesim-xxx.elf**) to ~/firesim/deploy/workloads/bao in the aws machine.
+
+Finally, please refer to the FireSim documentation "Running FireSim Single Node Simulations" (https://docs.fires.im/en/latest/Running-Simulations-Tutorial/Running-a-Single-Node-Simulation.html) to run the simulation. You'll just need to adapt the defaulthwconfig and workload fields in config_runtime.ini:
+
+```
+defaulthwconfig=firesim-rocket-h-quadcore-no-nic-l2-llc4mb-ddr3
+...
+workloadname=bao.json
+```
 
 
 
