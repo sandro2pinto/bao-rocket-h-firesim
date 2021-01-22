@@ -242,6 +242,10 @@ firesim/deploy/config_build_recipes.ini
 **`instancetype=z1d.2xlarge`**\
 **`deploytriplet=None`**
 
+Edit the build file to include the Rocket-H configuration: 
+
+firesim/deploy/config_build.ini
+
 `[builds]`\
 `# this section references builds defined in config_build_recipes.ini`\
 `# if you add a build here, it will be built when you run buildafi`\
