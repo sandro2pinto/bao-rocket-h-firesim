@@ -3,8 +3,8 @@
 / {
 	#address-cells = <0x2>;
 	#size-cells = <0x2>;
-	compatible = "riscv-virtio";
-	model = "riscv-virtio,qemu";
+	compatible = "freechips,rocketchip-h-firesim-dev";
+	model = "freechips,rocketchip-h-firesim";
 
 	chosen {
 		bootargs = "console=ttySIF0,3686400n8";
@@ -64,7 +64,7 @@
 			status = "okay";
 			compatible = "riscv";
 			riscv,isa = "rv64imafdcsu";
-			mmu-type = "riscv,sv48";
+			mmu-type = "riscv,sv39";
 
 			cpu0_intc: interrupt-controller {
 				#interrupt-cells = <0x1>;
@@ -79,7 +79,7 @@
 			status = "okay";
 			compatible = "riscv";
 			riscv,isa = "rv64imafdcsu";
-			mmu-type = "riscv,sv48";
+			mmu-type = "riscv,sv39";
 
 			cpu1_intc: interrupt-controller {
 				#interrupt-cells = <0x1>;
@@ -94,7 +94,7 @@
 			status = "okay";
 			compatible = "riscv";
 			riscv,isa = "rv64imafdcsu";
-			mmu-type = "riscv,sv48";
+			mmu-type = "riscv,sv39";
 
 			cpu2_intc: interrupt-controller {
 				#interrupt-cells = <0x1>;
@@ -109,7 +109,7 @@
 			status = "okay";
 			compatible = "riscv";
 			riscv,isa = "rv64imafdcsu";
-			mmu-type = "riscv,sv48";
+			mmu-type = "riscv,sv39";
 
 			cpu3_intc: interrupt-controller {
 				#interrupt-cells = <0x1>;
