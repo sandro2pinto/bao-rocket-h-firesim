@@ -1,0 +1,33 @@
+From fe2fcc714aa08b95b52d37f0dd8f447a9b71e131 Mon Sep 17 00:00:00 2001
+From: Jose Martins <josemartins90@gmail.com>
+Date: Mon, 2 Nov 2020 11:09:55 +0000
+Subject: [PATCH] force sifive uart config
+
+Signed-off-by: Jose Martins <josemartins90@gmail.com>
+---
+ drivers/tty/serial/sifive.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/tty/serial/sifive.c b/drivers/tty/serial/sifive.c
+index 13eadcb8a..eaa9d9896 100644
+--- a/drivers/tty/serial/sifive.c
++++ b/drivers/tty/serial/sifive.c
+@@ -675,11 +675,13 @@ static void sifive_serial_set_termios(struct uart_port *port,
+ 		dev_err_once(ssp->port.dev, "BREAK detection not supported\n");
+ 
+ 	/* Set number of stop bits */
+-	nstop = (termios->c_cflag & CSTOPB) ? 2 : 1;
++	//nstop = (termios->c_cflag & CSTOPB) ? 2 : 1;
++	nstop = 2;
+ 	__ssp_set_stop_bits(ssp, nstop);
+ 
+ 	/* Set line rate */
+-	rate = uart_get_baud_rate(port, termios, old, 0, ssp->clkin_rate / 16);
++	//rate = uart_get_baud_rate(port, termios, old, 0, ssp->clkin_rate / 16);
++	rate = 3686400;
+ 	__ssp_update_baud_rate(ssp, rate);
+ 
+ 	spin_lock_irqsave(&ssp->port.lock, flags);
+-- 
+2.25.1
+
