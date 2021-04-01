@@ -127,8 +127,8 @@ At this stage, the final system image is ready to be sent to the AWS machine (Fi
 
 # 2 - Building your Rocket-H design
 
-**Note**: There is a public afi for "our" Rocket-H design.\
-In case the public afi is used (see details below), please jump directly to Step 3 "Running your Rocket-H simulation" 
+**Note**: There is a public afi for "our" Rocket-H design. In case the public afi is used 
+(see details below), you may skip Step 2.2 "Configure useHype parameter on Boom and Ariane" 
 
 `[firesim-rocket-h-quadcore-no-nic-l2-llc4mb-ddr3]`\
 `agfi=agfi-0fc72a5b136b0f1e7`\
@@ -140,6 +140,10 @@ For FireSim Initial Setup/Installation please refer to the FireSim documentation
 https://docs.fires.im/en/latest/Initial-Setup/index.html
 
 **Note**: While selecting the AMI, you can use the FPGA Developer AMI - 1.6.1 
+
+**This tutorial expects the following Firesim and Chipyard versions (commit):**
+firesim - eb7d1af4964814270b176d4e682fc999e8db561a
+chipyard - 0e0c89cb1fa64eda74fa8e7dac438eae54a9df56
 
 
 ## 2.1 - Add Rocket-H to Chipyard
