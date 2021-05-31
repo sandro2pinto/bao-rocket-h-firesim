@@ -146,7 +146,7 @@ At this stage, the final system image is ready to be sent to the AWS machine (Fi
 `afi-02f30db5ff6f0985b`\
 `(aws ec2 describe-fpga-images --region us-east-1 --fpga-image-ids afi-02f30db5ff6f0985b)`
 
-**Other Regions**
+**Other Regions** \
 F1 instances are only available in those regions.
 
 
