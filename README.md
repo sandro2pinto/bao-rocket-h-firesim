@@ -142,8 +142,12 @@ At this stage, the final system image is ready to be sent to the AWS machine (Fi
 `afi-08045dd2d8a3c7571`\
 `(aws ec2 describe-fpga-images --region us-west-2 --fpga-image-ids afi-08045dd2d8a3c7571)`
 
+**US-EAST-1 AFI**
+`afi-02f30db5ff6f0985b`\
+`(aws ec2 describe-fpga-images --region us-east-1 --fpga-image-ids afi-02f30db5ff6f0985b)`
+
 **Other Regions**
-Please get in touch and we will make the AFI publicly available to your region.
+F1 instances are only available in those regions.
 
 
 For FireSim Initial Setup/Installation please refer to the FireSim documentation:
