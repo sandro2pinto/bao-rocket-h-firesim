@@ -130,10 +130,21 @@ At this stage, the final system image is ready to be sent to the AWS machine (Fi
 **Note**: There is a public afi for "our" Rocket-H design. In case the public afi is used 
 (see details below), you may skip Step 2.2 "Configure useHype parameter on Boom and Ariane" 
 
-`[firesim-rocket-h-quadcore-no-nic-l2-llc4mb-ddr3]`\
-`agfi=agfi-0fc72a5b136b0f1e7`\
-`deploytripletoverride=None`\
-`customruntimeconfig=None`
+**GLOBAL AFI**
+`agfi-09ca752d0efd62a14`\
+`(aws ec2 describe-fpga-images --filters Name=fpga-image-global-id,Values=agfi-09ca752d0efd62a14)`
+
+**EU-WEST-1 AFI**
+`afi-0c7c2676e01a2edf2`\
+`(aws ec2 describe-fpga-images --region eu-west-1 --fpga-image-ids afi-0c7c2676e01a2edf2)`
+
+**US-WEST-2 AFI**
+`afi-08045dd2d8a3c7571`\
+`(aws ec2 describe-fpga-images --region us-west-2 --fpga-image-ids afi-08045dd2d8a3c7571)`
+
+**Other Regions**
+Please get in touch and we will make the AFI publicly available to your region.
+
 
 For FireSim Initial Setup/Installation please refer to the FireSim documentation:
 
